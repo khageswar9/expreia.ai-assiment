@@ -13,6 +13,9 @@ router.post('/createuser', [
   body('name', 'Enter a valid name').isLength({ min: 3 }),
   body('email', 'Enter a valid email').isEmail(),
   body('password', 'Password must be atleast 5 characters').isLength({ min: 5 }),
+  body('skill', 'Enter a valid skill').isLength({ min: 3 }),
+  body('college', 'Enter a valid college').isLength({ min: 3 })
+
 ], async (req, res) => {
   let success = false;
   // If there are errors, return Bad request and the errors
@@ -34,6 +37,8 @@ router.post('/createuser', [
       name: req.body.name,
       password: secPass,
       email: req.body.email,
+      skill: req.body.skill,
+      college:req.body.college
     });
     const data = {
       user: {
