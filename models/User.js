@@ -13,6 +13,14 @@ const UserSchema = new Schema({
     password : {
         type : String,
         required : true
+    },
+    skill : {
+        type : String,
+        required : true
+    },
+    college : {
+        type : String,
+        required : true
     }
   });
 
